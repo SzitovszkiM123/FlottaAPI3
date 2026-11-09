@@ -1,0 +1,38 @@
+@FlottaAPI_HostAddress = http://localhost:5148
+
+GET {{FlottaAPI_HostAddress}}/api/User/GetAll
+Accept: application/json
+
+###
+
+GET {{FlottaAPI_HostAddress}}/api/User/GetById/1
+Accept: application/json
+
+###
+
+POST {{FlottaAPI_HostAddress}}/api/User/Post
+Content-Type: application/json
+
+{
+  "name": "Teszt Elek",
+  "loginName": "teszte",
+  "status": "active",
+  "active": true,
+  "address": "Miskolc, Fő utca 1",
+  "email": "teszte@ceg.hu",
+  "password": "Jelszo123",
+  "phone": "0630-1112233",
+  "permission": 2
+}
+
+###
+
+POST {{FlottaAPI_HostAddress}}/api/Login
+Content-Type: application/json
+
+{
+  "loginName": "teszte",
+  "password": "Jelszo123"
+}
+
+###
